@@ -1,25 +1,20 @@
-import logo from './logo.svg';
+import React , { useState } from 'react';
 import './App.css';
+//importing components
+import Form from './components/Form';
+import Todo from './components/Todo';
 
-function App() {
+export default function App() {
+  const[inputText, setInputText] = useState('')
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header>
+        
+        <h1>V's To-Do List</h1>
+        </header>
+        <Form setInputText={setInputText} />
+        <Todo />
+      
     </div>
   );
 }
-
-export default App;
